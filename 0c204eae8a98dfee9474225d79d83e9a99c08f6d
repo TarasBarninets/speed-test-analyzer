@@ -1,0 +1,521 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e54937b9_8150ab77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Qt -\u003e second symbol must be lower case.\nGit commit message is a very important part of a project. Base on commit you can understand what has been added, so there is quite interesting that describe how properly write commits.\nIn order to avoid a lot of grammar mistake I recommend you install Grammarly extension in your browser\nPlease, read this article:\nhttps://chris.beams.io/posts/git-commit/",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19d2723f_097b3563",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "There no reason to create empty constructor, just remove constructor and compiler will generated default constructor. It makes sense to create constructor if you want to add some custom logic.\nIt would be useful for you to recap which methods compiler automatically generates in class..",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 1
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8919f1d8_c17a1d1c",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "It seems like QFile class has a constructor that accept file path as input argument(read in Qt documentation):\nQFile(const QString \u0026name)\nIn this case we can avoid using setFileName method and write the following code:\nQFile file(path);\nCheck if it works...",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fd17a69_ff6adf75",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "We can make this code easier for reading, method QFile::open() return true if file has been open successfully, otherwise false, so we can use this approach ...\n\nbool result \u003d file.open(QIODevice::ReadOnly|QFile::Text);\nif(result)\n{\n        mJsonDoc \u003d QJsonDocument::fromJson(QByteArray(file.readAll()),\u0026mDocError);\n        mJsonArray \u003d QJsonValue(mJsonDoc.object().value(\"test_results\")).toArray();\n}\nelse\n{\n        // in this line we also can use assert just to break app execution in Debug mode, \n        // read this article - https://stackoverflow.com/questions/1571340/what-is-the-assert-function\n        qDebug() \u003c\u003c \"Can not open JSON file\";\n}\n\nreturn result;",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2e2f9cb_00308695",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Why do you cast result of .value(\"test_results\") method to QJsonValue type?\n\nI have just checked Qt documentation and it seems like .value() method of QJsonObject class already returns QJsonValue, so there not necessary to cast it to QJsonValue, because it is QJsonValue.\n\nAs a result, we can use the following code:\nmJsonArray \u003d mJsonDoc.object().value(\"test_results\").toArray();\ninstead of\nmJsonArray \u003d QJsonValue(mJsonDoc.object().value(\"test_results\")).toArray();\n\n---\nmJsonDoc.object() -\u003e this returns QJsonObject\nQJsonObject::value() -\u003e this method returns QJsonValue\n\nSee on methods declaration in Qt documentation:\nhttps://doc.qt.io/qt-5/qjsondocument.html#object\nhttps://doc.qt.io/qt-5/qjsonobject.html#value-1",
+      "range": {
+        "startLine": 17,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e19e1c04_4031fe0a",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "You can use a variable to save this value, so we will not call mJsonArray.count() on each iteration, because in for loop condition statement call after each iteration...\n\nconst int count \u003d mJsonArray.count();\nfor(int i\u003d0; i \u003c count; i++)\n...",
+      "range": {
+        "startLine": 31,
+        "startChar": 21,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eedecabd_034e4472",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Where do you use these local variables? it seems like you don\u0027t use them at all...",
+      "range": {
+        "startLine": 36,
+        "startChar": 7,
+        "endLine": 38,
+        "endChar": 80
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0f5277a_e68f8e0f",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Use underscore to separate words in this include guard - SPEED_TEST_JSON_PARSER_H",
+      "range": {
+        "startLine": 1,
+        "startChar": 8,
+        "endLine": 1,
+        "endChar": 29
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b96cc807_aa78e1c1",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Do you use this method somewhere?\nWe can use size of QVector that return getDwonloadData, so this method could be removed",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 29
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8b3c269_ecfe159c",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "If methods doesn\u0027t changes internal state of a class it is good to make it as as const method.\nAlso, if method don\u0027t generate any exceptions inside it nice to write noexcept.\n    const QVector\u003cdouble\u003e\u0026 getDownloadData() const noexcept;\n    const QVector\u003cdouble\u003e\u0026 getUploadData() const noexcept;\n    const QVector\u003cdouble\u003e\u0026 getPingData() const noexcept;",
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71ae5ef2_23b28ab5",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "ping is always positive integer number, so you may use size_t type instead of double",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f4895ac_88757c41",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "I would prefer to create QStringList outside of method call, so code will be easier to read..\n QStringList headerLabels \u003d { \"Download\", \"Upload\", \"Ping\", \"Timestamp\" };\n mModel-\u003esetHorizontalHeaderLabels(headerLabels);",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 96
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08b4f74a_781f2be4",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Make space after // , e.g.\n\n// prepare data",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 18
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5640ee7e_5f21b037",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "add spaces\n(int i \u003d 0; i \u003c mJson....)",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 61
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "719d9cb1_fd00c969",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Avoid code duplication. This expression could be moved into separate variable.\nqint64 timestamp \u003d mJsonParser.getTimestampData().at(i).toMSecsSinceEpoch();\ndownloadSeries-\u003eappend(timestamp, ...\nuploadSeries-\u003eappend(timestamp,..",
+      "range": {
+        "startLine": 42,
+        "startChar": 31,
+        "endLine": 42,
+        "endChar": 87
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cef5e4be_e86b90bb",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "extract as a local varaiable, avoid long expressions when passing arguments, or make if statment.\n\nif ( DO NOT USE LONG EXPRESION HERE )\n{\n\n}\n\nbetter\n\nauto variable \u003d LONG EXPRESSION HERE;\nif ( variable )\n{\n\n}",
+      "range": {
+        "startLine": 107,
+        "startChar": 25,
+        "endLine": 107,
+        "endChar": 115
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e031113_cf158b6f",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "well done, we should avoid using absolute path...\nif this variable is not going to change inside chooseJsonFile make it const\n\nconst QString documentsFolder \u003d QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);",
+      "range": {
+        "startLine": 113,
+        "startChar": 3,
+        "endLine": 113,
+        "endChar": 98
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d7aaf79_b5d3d6f0",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "const QString path \u003d ....",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 16
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cd36467_e21b6367",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "remove it",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eeaa8fa1_7917c63a",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "Make it virtual, QMainWindow class have virtual method.\nIf we have have at least one virtual function we must make destructor virtual...\nhttps://stackoverflow.com/questions/9095390/is-it-always-necessary-to-declare-destructor-as-virtual-if-the-class-contains-a",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c7d88d6_df0a314c",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "I would prefer to place methods before values, but it is depends on code style...\n\nprivate:\n    void fillTableView(QStandardItemModel* model);\n    void drawChart();\n\n    Ui::MainWindow *mUi;\n    QStandardItemModel* mModel;\n    SpeedTestJsonParser mJsonParser;",
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f49e092d_fa0fd8fd",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "What about idea that we discuss initially? It would be better to use abstract class here, so we can easily replace JSON parse on XML, CSV, whatever\n\nclass SpeedTestParser\n{\npublic:\n\n    virtual bool createDocument(QString path) \u003d 0;\n    virtual void parseDocument() \u003d 0;\n\t\n    virtual const QVector\u003cdouble\u003e\u0026 getDownloadData() \u003d 0;\n    virtual const QVector\u003cdouble\u003e\u0026 getUploadData() \u003d 0;\n    virtual const QVector\u003cdouble\u003e\u0026 getPingData() \u003d 0;\n    virtual const QVector\u003cQDateTime\u003e\u0026 getTimestampData() \u003d 0;\n\n...\n}\n\nclass SpeedTestJsonParser : public SpeedTestParser\n{\n...\n}",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f0ff02_c713fefb",
+        "filename": "src/main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-26T00:24:36Z",
+      "side": 1,
+      "message": "This code is fine, just want to pay your attention on class QApplication. Read what is the purpose of this class.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
