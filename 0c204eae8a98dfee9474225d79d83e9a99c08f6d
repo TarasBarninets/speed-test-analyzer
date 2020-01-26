@@ -25,6 +25,47 @@
     },
     {
       "key": {
+        "uuid": "f3e395c9_a8de9b93",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Thanks - read this article. Save in evernote Seven rules.",
+      "parentUuid": "e54937b9_8150ab77",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5f4ea7c_ad6fd840",
+        "filename": "SpeedTestAnalyzer.pro",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Deleted spaces",
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "19d2723f_097b3563",
         "filename": "src/SpeedTestJsonParser.cpp",
         "patchSetId": 1
@@ -45,6 +86,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d36bdcd2_db553898",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done\nFirst time deleted only realization, but declaration still exist in .h.\nBut got linker error -  qt file not found mainwindow.obj  😊\nDeleted declaration - everything ok !\n\nRead short article - C++ rules for automatic member function generation ( http://www.enyo.de/fw/notes/cpp-auto-members.html )",
+      "parentUuid": "19d2723f_097b3563",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 1
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "57c879a2_8d94b0c2",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Yes, you correct - QFile file(path) - it works !",
+      "parentUuid": "8919f1d8_c17a1d1c",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fd17a69_ff6adf75",
         "filename": "src/SpeedTestJsonParser.cpp",
         "patchSetId": 1
@@ -91,6 +180,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af1d0d53_b3f500ad",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fd17a69_ff6adf75",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +230,30 @@
     },
     {
       "key": {
+        "uuid": "fd515c88_b239c5a8",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "You are right ! mJsonDoc.object().value(\"test_results\").toArray(); - works !",
+      "parentUuid": "b2e2f9cb_00308695",
+      "range": {
+        "startLine": 17,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e19e1c04_4031fe0a",
         "filename": "src/SpeedTestJsonParser.cpp",
         "patchSetId": 1
@@ -137,6 +274,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bb07ef8_ad7e2ea4",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Yes, and I use method - that return size of mJsonArray - getCountJsonObject();",
+      "parentUuid": "e19e1c04_4031fe0a",
+      "range": {
+        "startLine": 31,
+        "startChar": 21,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +324,30 @@
     },
     {
       "key": {
+        "uuid": "bdfe3533_0ece4169",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Deleted these variables ... didn\u0027t use them",
+      "parentUuid": "eedecabd_034e4472",
+      "range": {
+        "startLine": 36,
+        "startChar": 7,
+        "endLine": 38,
+        "endChar": 80
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0f5277a_e68f8e0f",
         "filename": "src/SpeedTestJsonParser.h",
         "patchSetId": 1
@@ -183,6 +368,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d509952_2402d895",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0f5277a_e68f8e0f",
+      "range": {
+        "startLine": 1,
+        "startChar": 8,
+        "endLine": 1,
+        "endChar": 29
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -226,6 +435,48 @@
     },
     {
       "key": {
+        "uuid": "7a3d68a8_8e96f299",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "1) Yes, use this in method UserWindow::fillTableView :\n\nvoid UserWindow::fillTableView(QStandardItemModel* model)\n{ ...\n    int countJsonObject \u003d mJsonParser.getCountJsonObject();\n    for(int i\u003d0; i \u003c countJsonObject; i++)\n}\n\n2) Don\u0027t agree - because there is possible situation - during parsing - that few objects of DownloadData - will not parsed (ex. when partly incorrect JSON file), in such case - size of different Vectors with data - can be different !",
+      "parentUuid": "b96cc807_aa78e1c1",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 29
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eefdcd68_029e5bd2",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8b3c269_ecfe159c",
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71ae5ef2_23b28ab5",
         "filename": "src/SpeedTestJsonParser.h",
         "patchSetId": 1
@@ -237,6 +488,30 @@
       "writtenOn": "2020-01-26T00:24:36Z",
       "side": 1,
       "message": "ping is always positive integer number, so you may use size_t type instead of double",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4654b357_81e94ecc",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Ping always positive but NOT integer ! ping is fraction ! 61.922, 24.55 ...",
+      "parentUuid": "71ae5ef2_23b28ab5",
       "range": {
         "startLine": 31,
         "startChar": 4,
@@ -272,6 +547,30 @@
     },
     {
       "key": {
+        "uuid": "56595c51_46302221",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f4895ac_88757c41",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 96
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08b4f74a_781f2be4",
         "filename": "src/UserWindow.cpp",
         "patchSetId": 1
@@ -292,6 +591,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aba8a74b_88ae9791",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08b4f74a_781f2be4",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 18
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -318,6 +641,30 @@
     },
     {
       "key": {
+        "uuid": "450332f6_ff7c7725",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5640ee7e_5f21b037",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 61
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "719d9cb1_fd00c969",
         "filename": "src/UserWindow.cpp",
         "patchSetId": 1
@@ -338,6 +685,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6976e4da_10cc58ff",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "719d9cb1_fd00c969",
+      "range": {
+        "startLine": 42,
+        "startChar": 31,
+        "endLine": 42,
+        "endChar": 87
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -364,6 +735,30 @@
     },
     {
       "key": {
+        "uuid": "df62a841_1b44651b",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Don\u0027t understand clear how do with if statement ...\nMade next:\n\nQList\u003cQStandardItem*\u003e dataColumns \u003d { downloadColumn, uploadColumn, pingColumn, timestampColumn };\nmodel-\u003eappendRow(dataColumns);",
+      "parentUuid": "cef5e4be_e86b90bb",
+      "range": {
+        "startLine": 107,
+        "startChar": 25,
+        "endLine": 107,
+        "endChar": 115
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e031113_cf158b6f",
         "filename": "src/UserWindow.cpp",
         "patchSetId": 1
@@ -384,6 +779,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "908afa51_3b8bdfba",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e031113_cf158b6f",
+      "range": {
+        "startLine": 113,
+        "startChar": 3,
+        "endLine": 113,
+        "endChar": 98
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -410,6 +829,30 @@
     },
     {
       "key": {
+        "uuid": "7855ed57_8161a950",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d7aaf79_b5d3d6f0",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 16
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0cd36467_e21b6367",
         "filename": "src/UserWindow.h",
         "patchSetId": 1
@@ -430,6 +873,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "336ddbb8_f972fc7e",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0cd36467_e21b6367",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -473,6 +940,48 @@
     },
     {
       "key": {
+        "uuid": "0060e759_5ec45251",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeaa8fa1_7917c63a",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed375773_1f1d56cc",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c7d88d6_df0a314c",
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f49e092d_fa0fd8fd",
         "filename": "src/UserWindow.h",
         "patchSetId": 1
@@ -496,6 +1005,30 @@
     },
     {
       "key": {
+        "uuid": "c1506db4_a9d5383c",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f49e092d_fa0fd8fd",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "30f0ff02_c713fefb",
         "filename": "src/main.cpp",
         "patchSetId": 1
@@ -516,6 +1049,30 @@
       "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b8cb802_ac4139a3",
+        "filename": "src/main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017129
+      },
+      "writtenOn": "2020-01-26T23:18:33Z",
+      "side": 1,
+      "message": "Thanks, read doc. Understood for what responsible QApplication:\n\nIt initializes the application with the user\u0027s desktop settings such as palette(), font() and doubleClickInterval(). It keeps track of these properties in case the user changes the desktop globally, for example through some kind of control panel.\nIt performs event handling, meaning that it receives events from the underlying window system and dispatches them to the relevant widgets. By using sendEvent() and postEvent() you can send your own events to widgets.\nIt parses common command line arguments and sets its internal state accordingly. See the constructor documentation below for more details.\nIt defines the application\u0027s look and feel, which is encapsulated in a QStyle object. This can be changed at runtime with setStyle().\nIt provides localization of strings that are visible to the user via translate().\nIt provides some magical objects like the desktop() and the clipboard().\nIt knows about the application\u0027s windows. You can ask which widget is at a certain position using widgetAt(), get a list of topLevelWidgets() and closeAllWindows(), etc.\nIt manages the application\u0027s mouse cursor handling, see setOverrideCursor()",
+      "parentUuid": "30f0ff02_c713fefb",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
