@@ -524,6 +524,30 @@
     },
     {
       "key": {
+        "uuid": "91a175a5_73fc68fd",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T18:45:29Z",
+      "side": 1,
+      "message": "if it is fractional value you have to use double, I thought that ping it is number of ms and always integer value...",
+      "parentUuid": "4654b357_81e94ecc",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7f4895ac_88757c41",
         "filename": "src/UserWindow.cpp",
         "patchSetId": 1
@@ -747,6 +771,30 @@
       "side": 1,
       "message": "Don\u0027t understand clear how do with if statement ...\nMade next:\n\nQList\u003cQStandardItem*\u003e dataColumns \u003d { downloadColumn, uploadColumn, pingColumn, timestampColumn };\nmodel-\u003eappendRow(dataColumns);",
       "parentUuid": "cef5e4be_e86b90bb",
+      "range": {
+        "startLine": 107,
+        "startChar": 25,
+        "endLine": 107,
+        "endChar": 115
+      },
+      "revId": "0c204eae8a98dfee9474225d79d83e9a99c08f6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01e0b306_5b8550d7",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T18:45:29Z",
+      "side": 1,
+      "message": "You have done it correct. I don\u0027t mean that you have to do it with if statement, I just wanted to point your attention that you should avoid long expressions in if statement.",
+      "parentUuid": "df62a841_1b44651b",
       "range": {
         "startLine": 107,
         "startChar": 25,
