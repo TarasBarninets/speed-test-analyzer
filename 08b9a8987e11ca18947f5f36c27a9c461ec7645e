@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3127d9c2_e4a0f702",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "We do not change this variable, so make it const\nconst int countJsonObject \u003d",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c8650f6_98455a6e",
+        "filename": "src/SpeedTestJsonParser.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "I prefer to add spaces like this:\nint i \u003d 0;",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 15
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7b8299c_642dab0d",
+        "filename": "src/SpeedTestJsonParser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "getCountObject doesn\u0027t change anything inside SpeetTestJsonParser class, so you can make it as a const method\n\ngetCountObject() const overrid;\n\nAlso, let\u0027s discuss your comment regarding thing method offline...",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a2f1796_54810ac7",
+        "filename": "src/SpeedTestParser.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "there no necessary to commit empty file, so just remove SpeedTestParser.cpp",
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ac642e9_817f16c1",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "use std::uniqe_ptr instead of raw ptr, in this case you will not have to think about deallocation in constructor.\nIt is good practice to use smart pointers instead of raw pointers where it is possible...",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 38
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb2b0e30_409a87bc",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "please, move this to constructor\u0027s initialization list",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16589039_52a3386d",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "you can remove it if mParser will be unique_ptr, instead of raw ptr.\nRecap how unique_ptr works and try to use it here....",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82dbe527_a84bc6ea",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "countJsonObject can be const variable, because we do not change it at all...\nconst int countJsonObject \u003d ....\n\nAlso, code style for loop could be, it is common approach and easier for reading:\nfor (int i \u003d 0; i \u003c countJsonObject; i++)\n{\n}",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 41
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55405775_63d9935c",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "const qint64 timestamp \u003d",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 24
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1c77ff9_46ae333f",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "int i \u003d 0",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 15
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f64c1bd_d05906a3",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-27T17:30:31Z",
+      "side": 1,
+      "message": "remote new line,\n\n...\nvoid chooseFile();\n};",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 2
+      },
+      "revId": "08b9a8987e11ca18947f5f36c27a9c461ec7645e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
