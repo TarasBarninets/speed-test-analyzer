@@ -8,12 +8,13 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QLineSeries>
+#include <algorithm>
 
 UserWindow::UserWindow(QWidget *parent)
     : QMainWindow(parent) // pass constructor parameter into construction of base class -> QMainWindow
     , mUi(new Ui::MainWindow)
     , mModel(new QStandardItemModel)
-    , mParser(new SpeedTestJsonParser)
+    , mChartView(nullptr)
 {
     mUi->setupUi(this);
 
@@ -30,10 +31,8 @@ UserWindow::~UserWindow()
     delete mUi;
 }
 
-void UserWindow::drawChart()
+void UserWindow::createSeries(QChart* chart)
 {
-    QChart *chart = new QChart();
-
     // prepare data
     QLineSeries *downloadSeries = new QLineSeries();
     QLineSeries *uploadSeries = new QLineSeries();
@@ -63,38 +62,77 @@ void UserWindow::drawChart()
     chart->legend()->setAlignment(Qt::AlignBottom);
 
     // set chart title
-    chart->setTitle("Chart build based on parsed JSON file");
+    chart->setTitle("Chart based on parsed file");
     chart->setAnimationOptions(QChart::AllAnimations);
+
+    // find values for set Range and TickCount
+    const double maxDownload = mParser->getMaxDownload();
+    const double maxUpload = mParser->getMaxUpload();
+    const double maxPing = mParser->getMaxPing();
+
+    const double maxRange = std::max(std::max(maxDownload, maxUpload), maxPing);
+    const int tickCount = static_cast<int>(maxRange/3);
 
     // add axis to the chart
     QDateTimeAxis *axisX = new QDateTimeAxis;
-    axisX->setTickCount(7);
     axisX->setFormat("MM-dd hh:mm:ss");
     axisX->setTitleText("Time");
     chart->addAxis(axisX, Qt::AlignBottom);
     downloadSeries->attachAxis(axisX);
+    uploadSeries->attachAxis(axisX);
+    pingSeries->attachAxis(axisX);
 
     QValueAxis *axisY = new QValueAxis;
-    axisY->setLabelFormat("%i");
+    axisY->setTickCount(tickCount);
+    axisY->setLabelFormat("%d");
     axisY->setTitleText("Speed");
     chart->addAxis(axisY, Qt::AlignLeft);
-    chart->axes(Qt::Vertical).back()->setRange(0, 25);
+    chart->axes(Qt::Vertical).back()->setRange(0 , maxRange);
     downloadSeries->attachAxis(axisY);
+    uploadSeries->attachAxis(axisY);
+    pingSeries->attachAxis(axisY);
+}
 
-    // create new view
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
+void UserWindow::drawChart()
+{
+    // if chart exist - clear series and axis
+    if(mChartView != nullptr)
+    {
+         QChart* chart = mChartView->chart();
+         chart->removeAllSeries();
+         chart->removeAxis(chart->axes(Qt::Horizontal).back());
+         chart->removeAxis(chart->axes(Qt::Vertical).back());
+         createSeries(chart);
+    }
+    else
+    {
+        QChart *chart = new QChart();
+        createSeries(chart);
 
-    mUi->tabWidget->addTab(chartView,"Chart");
+        // create new view
+        mChartView = new QChartView(chart);
+        mChartView->setChart(chart);
+        mChartView->setRenderHint(QPainter::Antialiasing);
+
+        // add new tab that contain chart
+        mUi->tabWidget->addTab(mChartView,"Chart");
+    }
 }
 
 void UserWindow::fillTableView(QStandardItemModel* model)
 {
-     const QVector<double>& downloadData = mParser->getDownloadData();
-     const QVector<double>& uploadData = mParser->getUploadData();
-     const QVector<double>& pingData = mParser->getPingData();
-     const QVector<QDateTime>& timestampData = mParser->getTimestampData();
-     const int countJsonObject = mParser->getCountObject();
+    // if tableview not empty - clear data
+    int rowCount = mModel->rowCount();
+    if(rowCount > 0)
+    {
+        mModel->setRowCount(0);
+    }
+
+    const QVector<double>& downloadData = mParser->getDownloadData();
+    const QVector<double>& uploadData = mParser->getUploadData();
+    const QVector<double>& pingData = mParser->getPingData();
+    const QVector<QDateTime>& timestampData = mParser->getTimestampData();
+    const int countJsonObject = mParser->getCountObject();
 
     for(int i = 0; i < countJsonObject; i++)
     {
@@ -117,9 +155,25 @@ void UserWindow::fillTableView(QStandardItemModel* model)
 void UserWindow::chooseFile()
 {
     const QString documentsFolder = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-    const QString path = QFileDialog::getOpenFileName(nullptr, "", documentsFolder, "*.json");
+    const QString path = QFileDialog::getOpenFileName(nullptr, "", documentsFolder, "Files (*.json *.xml)");
 
-    // create valid instance of parser based on the type of file that has been chosen - xml, json , etc.
+    QFileInfo info(path);
+    QString ext = info.suffix();
+
+     // create valid instance of parser based on the type of file that has been chosen - xml, json , etc.
+    if(ext == "json")
+    {
+        mParser.reset(new SpeedTestJsonParser());
+    }
+    else if(ext == "xml")
+    {
+        mParser.reset(new SpeedTestXmlParser());
+    }
+    else
+    {
+        QMessageBox::critical(this,"Load File Problem", "Couldn't open choosen file. Please choose file with .xml or .json extention", QMessageBox::Ok);
+    }
+
     if(mParser)
     {
         mParser->createDocument(path);

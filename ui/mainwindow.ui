@@ -49,7 +49,7 @@
         <item>
          <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>Parse JSON file</string>
+           <string>Choose file for parsing</string>
           </property>
          </widget>
         </item>
