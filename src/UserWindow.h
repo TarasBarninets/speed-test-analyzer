@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "SpeedTestJsonParser.h"
+#include "SpeedTestXmlParser.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,10 +20,12 @@ public:
 private:
     void fillTableView(QStandardItemModel* model);
     void drawChart();
+    void createSeries(QChart* chart);
 
-    Ui::MainWindow *mUi;
+    Ui::MainWindow* mUi;
     QStandardItemModel* mModel;
     std::unique_ptr<SpeedTestParser> mParser;
+    QChartView* mChartView;
 
 private slots:
     void chooseFile();
