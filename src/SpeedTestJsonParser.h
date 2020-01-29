@@ -10,8 +10,6 @@
 
 class SpeedTestJsonParser : public SpeedTestParser
 {
-     Q_OBJECT
-
 public:
     bool createDocument(QString path) override;
     void parseDocument() override;
@@ -23,4 +21,4 @@ private:
     QJsonParseError mDocError;
 };
 
-#endif // SPEEDTESTJSONPARSER_H
+#endif // SPEED_TEST_JSON_PARSER_H
