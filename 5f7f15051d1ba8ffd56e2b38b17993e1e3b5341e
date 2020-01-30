@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1c243f9_80cff71c",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-30T22:46:20Z",
+      "side": 1,
+      "message": "QChartView must be a child of UserWindow, so in this case when UserWindow will be delete it also deletes QChartView.\nAt this moment you create QChartView on the heap and doesn\u0027t deallocate memory at all, so you have memory leak.\nBetter solution, make mChartView as child of UserWindow.\n2nd. solution, delete mChartView manually in constructor of UserWindow.",
+      "range": {
+        "startLine": 113,
+        "startChar": 21,
+        "endLine": 113,
+        "endChar": 35
+      },
+      "revId": "5f7f15051d1ba8ffd56e2b38b17993e1e3b5341e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "400894d0_a1204af5",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-01-30T22:46:20Z",
+      "side": 1,
+      "message": "You may avoid calling this method, because char has been already passed as a parameter in QChartView constructor.",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 36
+      },
+      "revId": "5f7f15051d1ba8ffd56e2b38b17993e1e3b5341e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
