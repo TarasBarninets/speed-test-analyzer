@@ -8,5 +8,5 @@ int main(int argc, char *argv[])
     UserWindow w;
     w.show();
 
-    return a.exec();
+    return a.exec(); // this is BLOCKING CODE
 }

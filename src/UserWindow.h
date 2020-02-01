@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "SpeedTestJsonParser.h"
 #include "SpeedTestXmlParser.h"
+#include "SpeedTestAnalyzer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,9 +27,33 @@ private:
     QStandardItemModel* mModel;
     std::unique_ptr<SpeedTestParser> mParser;
     QChartView* mChartView;
+    SpeedTestAnalyzer* mDownloader;
 
 private slots:
     void chooseFile();
+};
+
+class Factory
+{
+  public:
+    virtual SpeedTestParser* createParser() = 0;
+    virtual ~Factory() {}
+};
+
+class JsonFactory: public Factory
+{
+  public:
+    SpeedTestParser* createParser() {
+      return new SpeedTestJsonParser;
+    }
+};
+
+class XmlFactory: public Factory
+{
+  public:
+    SpeedTestParser* createParser() {
+      return new SpeedTestXmlParser;
+    }
 };
 
 #endif // MAINWINDOW_H

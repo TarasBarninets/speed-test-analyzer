@@ -15,10 +15,15 @@ UserWindow::UserWindow(QWidget *parent)
     , mUi(new Ui::MainWindow)
     , mModel(new QStandardItemModel)
     , mChartView(nullptr)
+    , mDownloader(new SpeedTestAnalyzer(this))
 {
     mUi->setupUi(this);
-
+    mUi->progressBar->reset();
     connect(mUi->pushButton, &QPushButton::clicked, this, &UserWindow::chooseFile);
+    connect(mUi->pushButton_2, &QPushButton::clicked, mDownloader, &SpeedTestAnalyzer::sendRequest);
+    connect(mDownloader, &SpeedTestAnalyzer::bytesTotal, mUi->progressBar, &QProgressBar::setMaximum);
+    connect(mDownloader, &SpeedTestAnalyzer::bytesReceived, mUi->progressBar, &QProgressBar::setValue);
+    connect(mDownloader, &SpeedTestAnalyzer::downloadSpeed, mUi->label, &QLabel::setText);
 
     QStringList headerLabels = { "Download", "Upload", "Ping", "Timestamp" };
     mModel->setHorizontalHeaderLabels(headerLabels);
@@ -159,14 +164,16 @@ void UserWindow::chooseFile()
     QFileInfo info(path);
     QString ext = info.suffix();
 
+    XmlFactory* xmlFactory = new XmlFactory();
+    JsonFactory* jsonFactory = new JsonFactory();
      // create valid instance of parser based on the type of file that has been chosen - xml, json , etc.
     if(ext == "json")
     {
-        mParser.reset(new SpeedTestJsonParser());
+        mParser.reset(jsonFactory->createParser());
     }
     else if(ext == "xml")
     {
-        mParser.reset(new SpeedTestXmlParser());
+        mParser.reset(xmlFactory->createParser());
     }
     else
     {
