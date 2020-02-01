@@ -1,4 +1,6 @@
 #include "SpeedTestXmlParser.h"
+#include <QFile>
+#include <QtMath>
 
 bool SpeedTestXmlParser::createDocument(QString path)
 {

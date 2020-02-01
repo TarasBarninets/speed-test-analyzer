@@ -28,4 +28,4 @@ protected:
     QVector<QDateTime> mTimestampData;
 };
 
-#endif // SPEEDTESTPARSER_H
+#endif // SPEED_TEST_PARSER_H

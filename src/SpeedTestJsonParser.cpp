@@ -1,9 +1,10 @@
 #include "SpeedTestJsonParser.h"
+#include <QFile>
+#include <QtMath>
 
 bool SpeedTestJsonParser::createDocument(QString path)
 {
     QFile file(path);
-
 
     bool result = file.open(QIODevice::ReadOnly|QFile::Text);
     if(result)

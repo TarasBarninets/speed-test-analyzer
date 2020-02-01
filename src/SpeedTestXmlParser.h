@@ -4,7 +4,6 @@
 #include "SpeedTestParser.h"
 
 #include <QDomDocument>
-#include <QtCharts>
 
 class SpeedTestXmlParser : public SpeedTestParser
 {

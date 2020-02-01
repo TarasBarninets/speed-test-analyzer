@@ -6,7 +6,6 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonParseError>
-#include <QtCharts>
 
 class SpeedTestJsonParser : public SpeedTestParser
 {

@@ -1,5 +1,7 @@
 #include "UserWindow.h"
 #include "ui_mainwindow.h"
+#include "SpeedTestParser.h"
+#include "SpeedTestFactoryMethod.h"
 
 #include <QFile>
 #include <QFileDialog>
@@ -8,6 +10,7 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QLineSeries>
+#include <QStandardItemModel>
 #include <algorithm>
 
 UserWindow::UserWindow(QWidget *parent)
@@ -15,10 +18,15 @@ UserWindow::UserWindow(QWidget *parent)
     , mUi(new Ui::MainWindow)
     , mModel(new QStandardItemModel)
     , mChartView(nullptr)
+    , mDownloader(new SpeedTestAnalyzer(this))
 {
     mUi->setupUi(this);
-
+    mUi->progressBar->reset();
     connect(mUi->pushButton, &QPushButton::clicked, this, &UserWindow::chooseFile);
+    connect(mUi->pushButton_2, &QPushButton::clicked, mDownloader, &SpeedTestAnalyzer::sendRequest);
+    connect(mDownloader, &SpeedTestAnalyzer::bytesTotal, mUi->progressBar, &QProgressBar::setMaximum);
+    connect(mDownloader, &SpeedTestAnalyzer::bytesReceived, mUi->progressBar, &QProgressBar::setValue);
+    connect(mDownloader, &SpeedTestAnalyzer::downloadSpeed, mUi->label, &QLabel::setText);
 
     QStringList headerLabels = { "Download", "Upload", "Ping", "Timestamp" };
     mModel->setHorizontalHeaderLabels(headerLabels);
@@ -151,6 +159,7 @@ void UserWindow::fillTableView(QStandardItemModel* model)
     }
 }
 
+
 void UserWindow::chooseFile()
 {
     const QString documentsFolder = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -159,19 +168,7 @@ void UserWindow::chooseFile()
     QFileInfo info(path);
     QString ext = info.suffix();
 
-     // create valid instance of parser based on the type of file that has been chosen - xml, json , etc.
-    if(ext == "json")
-    {
-        mParser.reset(new SpeedTestJsonParser());
-    }
-    else if(ext == "xml")
-    {
-        mParser.reset(new SpeedTestXmlParser());
-    }
-    else
-    {
-        QMessageBox::critical(this,"Load File Problem", "Couldn't open choosen file. Please choose file with .xml or .json extention", QMessageBox::Ok);
-    }
+    mParser.reset(createParser(ext));
 
     if(mParser)
     {

@@ -1,4 +1,4 @@
-QT += core gui charts xml
+QT += core gui charts xml network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,12 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/SpeedTestAnalyzer.cpp \
+    src/SpeedTestFactoryMethod.cpp \
     src/SpeedTestXmlParser.cpp \
     src\UserWindow.cpp \
     src\main.cpp \
     src\SpeedTestJsonParser.cpp
 
 HEADERS += \
+    src/SpeedTestAnalyzer.h \
+    src/SpeedTestFactoryMethod.h \
     src/SpeedTestXmlParser.h \
     src\SpeedTestParser.h \
     src\UserWindow.h \

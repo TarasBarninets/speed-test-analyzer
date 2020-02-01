@@ -2,8 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "SpeedTestJsonParser.h"
-#include "SpeedTestXmlParser.h"
+
+#include "SpeedTestAnalyzer.h"
+#include <QChart>
+#include <QtCharts>
+#include <QChartView>
+
+class SpeedTestParser;
+class QStandardItemModel;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +32,7 @@ private:
     QStandardItemModel* mModel;
     std::unique_ptr<SpeedTestParser> mParser;
     QChartView* mChartView;
+    SpeedTestAnalyzer* mDownloader;
 
 private slots:
     void chooseFile();
