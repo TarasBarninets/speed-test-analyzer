@@ -1,0 +1,366 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ffc2686_f950455e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "I would prefer to write something like it\n\"Add class for testing download speed\"\nReal-time term in computing have another meaning, I have just read in wikipedia a little bit about real-time in computing, so the main idea is \"Real-time programs must guarantee response within specified time constraints\"\nOur speed test aproach doesn\u0027t guarantee any time constrains, so we can not say that we test download speed in real-time 😊",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 50
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27d4b63a_d7e1bbf0",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "Well done, this is right code.\nJust wanted to pay your attention. As I know, Qt handles meta-object hierarchy in QObject class, that\u0027s why we pass parent as a argument of QObject class.\nNo need any changes here...",
+      "range": {
+        "startLine": 4,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 21
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47a39207_54e312e4",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "It seems like you have a memory leak here, you have created QTime on heap(new QTime) and doesn\u0027t call delete for it.\nAlso, QTime isn\u0027t a part of any Qt meta object hierarchy so there no parent class that will delete him.",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 32
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89b4b8d7_02d74dd6",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "you should add space after \u0027//\u0027 and comment\ne.g.\n// https://...\ninstead\n//https://...",
+      "range": {
+        "startLine": 15,
+        "startChar": 52,
+        "endLine": 15,
+        "endChar": 80
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "436c9438_4647dc72",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "It seems like QNetworkRequest class have a constructor that accept url as input argument:\nQNetworkRequest(const QUrl \u0026url)\nAs a result, you may avoid calling setUrl(url) and just write the following code:\nQNetworkRequest request(url);",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 24
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f2f5785_3ca00be4",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "NEVER, do not use your local absolute path into GIT commits. This code will works only on your machine. There no any guarantee that C: drive is exists on another machine.\nYou may use Qt class in order to get a path to Downloads folder. As you probably remember, you have already done such thing...",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 62
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9acf2853_fb363b69",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "misprint, add space after \u0027data\u0027",
+      "range": {
+        "startLine": 41,
+        "startChar": 15,
+        "endLine": 41,
+        "endChar": 20
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d511be91_f8f2b5d9",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "let\u0027s convert it in mega bits? and you can use \"Mbps\"\nPay attention,\nMega bits are not Mega bytes.\n1 byte \u003d 8 bits :)",
+      "range": {
+        "startLine": 46,
+        "startChar": 55,
+        "endLine": 46,
+        "endChar": 64
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b6de2ab_18410a61",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "Download speed?",
+      "range": {
+        "startLine": 48,
+        "startChar": 17,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90c55f45_ca845372",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "remove space before \u0027Error\u0027",
+      "range": {
+        "startLine": 56,
+        "startChar": 21,
+        "endLine": 56,
+        "endChar": 22
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f9bb186_691d1f91",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "NEVER push dead code/comments on git",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 10
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "068a76df_ee1b4fc2",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "We always must close mFile, even if request has not been process successfully, so move mFile-\u003eclose(); outside if statement.",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 23
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35f27766_02a6de5b",
+        "filename": "src/SpeedTestAnalyzer.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "This code is fine, but we can make it even better.\n\nYou should try to avoid include headers files into headers file, because when someone include \"SpeedTestAnalyzer.h\" he also automatically includes all these header files as well - QNetworkAccessManager, QNetworkRequest, QNetworkReply, QFile, but why does he need to know about QNetworkRequest if he is not going to use any methods from QNetworkRequest...\n\nSo there is one very popular approach that let you avoid including headers into headers - \"forward declaration\"\nIf you use pointers to some class into header file you may just write into header file e.g. :\nclass QNetworkReply;\nand in cpp include this file #include \u003cQNetworkReply\u003e\n\nAs a result, we avoid including header files into header files 😊\n\nSo let me sump up, add here forward declaration for Qt classes and make includes into SpeedTestAnalyzer, cpp file",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 16
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b3e3a27_40cfa483",
+        "filename": "src/UserWindow.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "There are 2 patterns that quite often confused:\n1. Factory method\n2. Abstract factory\n\nIt seems like you are going to implement Abstract factory, let\u0027s discuss it offline.",
+      "range": {
+        "startLine": 167,
+        "startChar": 4,
+        "endLine": 168,
+        "endChar": 49
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "246fad1a_910e02fa",
+        "filename": "src/UserWindow.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "let\u0027s discuss offline",
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdaef57d_8e6facae",
+        "filename": "src/main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-01T20:55:14Z",
+      "side": 1,
+      "message": "yes, you are right. This function has internal \"message loop\" that runs during whole life of GUI application.\nThis loop handle different events from UI, e.g. button clicked, data from network received, signal-slots connection.\nI think that it makes sense to remove this comment from git repo...",
+      "range": {
+        "startLine": 11,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
