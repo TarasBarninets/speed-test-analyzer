@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "5e15a3df_81f8ceb9",
+        "filename": "src/SpeedTestAnalyzer.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1017119
+      },
+      "writtenOn": "2020-02-02T19:50:12Z",
+      "side": 1,
+      "message": "yes, you are right.\nYes, delete this class in destructor will solve memory leak problem.\nJFYI,\nAlso, you could use unique_ptr instead of manually calling delete",
+      "parentUuid": "fec69ff1_e6573c90",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 32
+      },
+      "revId": "be418c43cf392eb0fcc2778584039309bc6f0f91",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89b4b8d7_02d74dd6",
         "filename": "src/SpeedTestAnalyzer.cpp",
         "patchSetId": 1
